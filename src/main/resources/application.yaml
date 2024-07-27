@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: transaction-processing
+  data:
+    mongodb:
+      uri: mongodb://mongodb:27017/transactiondb
+    rabbitmq:
+      host: rabbitmq
+      username: user
+      password: password
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+    com.sofka.transaction: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  metrics:
+    export:
+      prometheus:
+        enable: true
+  tracing:
+    enable: true
+    sapling:
+      probability: 1.0
