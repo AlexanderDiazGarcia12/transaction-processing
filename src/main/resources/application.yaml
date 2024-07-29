@@ -30,3 +30,7 @@ management:
     enable: true
     sapling:
       probability: 1.0
+
+schedule:
+  cron:
+    "0 0 0 * * ?"
